@@ -1,0 +1,115 @@
+body{
+  height: auto;
+  background: url('https://media.istockphoto.com/id/1498640548/es/foto/nueva-barra-de-progreso-del-a%C3%B1o-2024-en-pantalla-lcd-digital-con-reflexi%C3%B3n.jpg?s=2048x2048&w=is&k=20&c=Esa_jXn0OTBvxTu5VffFjlFQFQLX7yCsgQmOPobgckk=');
+}
+
+.card {
+    width: 17em;
+    height: 22.5em;
+    background: #171717;
+    transition: 1s ease-in-out;
+    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card span {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 1em;
+  }
+  
+  .card .info {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 0.72em;
+    margin: 1em;
+  }
+  
+  .card .img {
+    width: 4.8em;
+    height: 4.8em;
+    background: white;
+    border-radius: 15px;
+    margin: auto;
+  }
+  
+  .card .share {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+  
+  .card a {
+    color: white;
+    transition: .4s ease-in-out;
+  }
+  
+  .card a:hover {
+    color: red;
+  }
+  
+  .card button {
+    padding: 0.8em 1.7em;
+    display: block;
+    margin: auto;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    transition: .4s ease-in-out;
+  }
+  
+  .card button:hover {
+    background: red;
+    color: white;
+    cursor: pointer;
+  }
+
+  .btnDonate {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(194 100% 69% / 1);
+    --btn-bg-2: hsla(217 100% 56% / 1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.9em 1.4em;
+    min-width: 120px;
+    margin: 4px;
+    min-height: 44px;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+  }
+  
+  .btnDonate:hover {
+    background-position: right top;
+  }
+  
+  .btnDonate:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .btnDonate {
+      transition: linear;
+    }
+  }
+  
