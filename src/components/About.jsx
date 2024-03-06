@@ -12,7 +12,7 @@ const About = () => {
         <div className="row">
           <div className="col-md-12 text-center">
             <h1>Edgar Luna</h1>
-            <h2>Business Systems Analyst || Full stack Developer || Data Analyst</h2>
+            <h2>| Business Systems Analyst | Full stack Developer | Data Analyst |</h2>
             <div className="row">
               <div className="col-md-6">
                 <h3>About me</h3>
@@ -114,18 +114,18 @@ const About = () => {
             <div className="col m-1">
               <h3>Software Skills</h3>
               <ul>
-                <li>MEVN, MERN and MEAN ( Full JavaScript Stack ) </li>
-                <li>Laravel, Symfony, CodeIgniter s( Full PHP Stack ) </li>
+                <li>MEVN, MERN and MEAN <br />( Full JavaScript Stack ) </li>
+                <li>Laravel, Symfony, CodeIgniters <br />( Full PHP Stack ) </li>
                 <li>Office 365 Full ( .docx, .pptx, .xslx, .ppkg ) </li>
-                <li>ServiceNow incidents attentions</li>
+                <li>ServiceNow Hot Topics</li>
                 <li>Docker, Yaml, Scripts ( DevEnv )</li>
                 <li>Git, Atlassian ( Management Versions )</li>
-                <li>Full .NET Stack (SharePoint, Blazor, ASP, CORE ) </li>
-                <li>Azure Services, Graph, AD, Bot(Cloud) </li>
-                <li>Django, Flask & Pandas ( Full Python Stack )</li>
+                <li>.NET  <br />( SharePoint, Blazor, ASP, CORE, WCF ) </li>
+                <li>Azure Services, AWS, Graph, AD, Bot <br />(Cloud) </li>
+                <li>Django, Flask & Pandas <br />( Full Python Stack )</li>
                 <li>Linux & Command Lines</li>
-                <li>DevOps, SCRUM, LEAN, CI / CD ( Methodologies )</li>
-                <li>Mobile Develop ( Kotlin, DART, MAUI and Swift )</li>
+                <li>DevOps, SCRUM, LEAN, CI / CD</li>
+                <li>Mobile ( Kotlin, DART, MAUI and Swift )</li>
                 <li>Ngrok and Creation of Buses ( Az, AWS )</li>
                 <li>Jquery & Ajax ( Bases of JavaScript )</li>
                 <li>SQL - Jobs, Procedures, and Super Querys</li>
@@ -133,17 +133,18 @@ const About = () => {
                 <li>Tableau (Prep Builder, Server & Cloud)</li>
                 <li>PowerBI ( Dax and Visuals improvements)</li>
                 <li>PowerAutomate , Katalon, Postman <br /> ( RPA & Testing )</li>
-                <li>Agile Methodologies (Scrum cases, Kanban )</li>
+                <li>Agile Methodologies <br />( SCRUM, Kanban, LEAN, KAIZEN-IT )</li>
                 <li>Citrix, Team Viewer (Support IT)</li>
                 <li>MariaDB, Oracle, Posgres, SQL Server (DBA)</li>
-                <li>Windows Server, Apache Server, NGINX ( Heroku ) CheckMarx ( Security Tools )</li>
-                <li>API Develop & Consume (Code and Non-code)</li>
+                <li>Windows Server, Apache Server, NGINX </li>
+                <li>CheckMarx ( Security Tools )</li>
                 <li>Mulesoft, SaaS, PaaS, API, JSON, SalesForce</li>
-                <li>MVC, SPA, Embedded, CMS, PWA, ORMs ( IT Architectures ) LLMS, GenAI, Predictions, Cognitive Services ( AI )</li>
-                <li>Business Systems Analysis, KPI and Kaizens</li>
-                <li>CMS Support ( WordPress, Google Pages, Css)</li>
-                <li>Full Packages Management ( npm, pip, nuget, composer, chocolate, yarn, etc...)</li>
-                <li>Data mining, Big Data & ETL ( Talend, informatica, SNFK)</li>
+                <li>MVC, SPA, Embedded, CMS, PWA, ORMs <br />( IT Architectures )</li>
+                <li>LLMS, GenAI, Predictions, Cognitive Services ( AI )</li>
+                <li>Business Systems Analysis</li>
+                <li>CMS Support <br />( WordPress, Google Pages, Css)</li>
+                <li>Full Packages Management <br />( npm, pip, nuget, composer, chocolate, yarn )</li>
+                <li>Data mining, Big Data & ETL <br />( Talend, informatica, SNFK)</li>
               </ul>
             </div>
           </div>
