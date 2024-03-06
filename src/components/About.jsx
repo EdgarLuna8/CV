@@ -28,6 +28,7 @@ const About = () => {
                 <Call link="https://wa.me/523330099430" title="WhatsApp" />
                 <Call link="https://www.linkedin.com/in/edgarluna8/" title="LinkedIn" />
                 <Call link="https://drive.google.com/file/d/1y-GzqPBk9uSQbyliEvxeTbgjE9DxGzQD/view?usp=sharing" title="CV" />
+                <Call link="https://github.com/edgarluna8" title="Github" />
 
               </div>
             </div>
@@ -61,10 +62,10 @@ const About = () => {
                 <b>Odisa Equipa</b>
                 <p>Data Engineer & Developer | December 2023 - now</p>
                 <ul>
-                  <li>Porwer BI Dashboards</li>
-                  <li>Talend Jobs</li>
-                  <li>Bitrix Inject Support</li>
-                  <li>SAP B1</li>
+                  <li>Data Mining, ETL and Dashboard visuals</li>
+                  <li>KPI Data Analysis</li>
+                  <li>Java , PHP and JS</li>
+                  <li>SAP B1 - External and Internal Integrations</li>
                 </ul>
               </div>
               <div>
