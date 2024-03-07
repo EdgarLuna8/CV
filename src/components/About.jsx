@@ -11,7 +11,7 @@ const About = () => {
 
         <div className="row">
           <div className="col-md-12 text-center">
-            <h1>Edgar Luna</h1>
+            <h1>Edgar Adrian Luna Lopez</h1>
             <h2>| Business Systems Analyst | Full stack Developer | Data Analyst |</h2>
             <div className="row">
               <div className="col-md-6">
