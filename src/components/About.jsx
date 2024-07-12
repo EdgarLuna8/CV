@@ -12,7 +12,7 @@ const About = () => {
         <div className="row">
           <div className="col-md-12 text-center">
             <h1>Edgar Adrian Luna Lopez</h1>
-            <h2>| Business Systems Analyst | Full stack Developer | Data Analyst |</h2>
+            <h2>| Software Engineer | Business Systems Analyst | Full stack Developer |</h2>
             <div className="row">
               <div className="col-md-6">
                 <h3>About me</h3>
@@ -55,17 +55,16 @@ const About = () => {
                 </ul>
               </div>
             </div>
-
+            {/**  Carrer History*/}
             <div className="col m-1">
               <div>
                 <h3 className='text-center'>Career History</h3>
-                <b>Odisa Equipa</b>
-                <p>Data Engineer & Developer | December 2023 - now</p>
+                <b>Toka Internacional</b>
+                <p>Software Engineer | April 2024 - now</p>
                 <ul>
-                  <li>Data Mining, ETL and Dashboard visuals</li>
-                  <li>KPI Data Analysis</li>
-                  <li>Java , PHP and JS</li>
-                  <li>SAP B1 - External and Internal Integrations</li>
+                  <li>Technical analysis and planning</li>
+                  <li>Business documentation and IT deployments</li>
+                  <li>Software design and architecture</li>
                 </ul>
               </div>
               <div>
@@ -110,43 +109,55 @@ const About = () => {
               </div>
             </div>
 
-
+            {/* Skills */}
             <div className="col m-1">
               <h3>Software Skills</h3>
               <ul>
-                <li>MEVN, MERN and MEAN <br />( Full JavaScript Stack ) </li>
-                <li>Laravel, Symfony, CodeIgniters <br />( Full PHP Stack ) </li>
-                <li>Office 365 Full ( .docx, .pptx, .xslx, .ppkg ) </li>
-                <li>ServiceNow Hot Topics</li>
-                <li>Docker, Yaml, Scripts ( DevEnv )</li>
-                <li>Git, Atlassian ( Management Versions )</li>
-                <li>.NET  <br />( SharePoint, Blazor, ASP, CORE, WCF ) </li>
-                <li>Azure Services, AWS, Graph, AD, Bot <br />(Cloud) </li>
-                <li>Django, Flask & Pandas <br />( Full Python Stack )</li>
-                <li>Linux & Command Lines</li>
-                <li>DevOps, SCRUM, LEAN, CI / CD</li>
-                <li>Mobile ( Kotlin, DART, MAUI and Swift )</li>
-                <li>Ngrok and Creation of Buses ( Az, AWS )</li>
-                <li>Jquery & Ajax ( Bases of JavaScript )</li>
-                <li>SQL - Jobs, Procedures, and Super Querys</li>
-                <li>Figma (UX & UI Design )</li>
-                <li>Tableau (Prep Builder, Server & Cloud)</li>
-                <li>PowerBI ( Dax and Visuals improvements)</li>
-                <li>PowerAutomate , Katalon, Postman <br /> ( RPA & Testing )</li>
-                <li>Agile Methodologies <br />( SCRUM, Kanban, LEAN, KAIZEN-IT )</li>
-                <li>Citrix, Team Viewer (Support IT)</li>
-                <li>MariaDB, Oracle, Posgres, SQL Server (DBA)</li>
-                <li>Windows Server, Apache Server, NGINX </li>
-                <li>CheckMarx ( Security Tools )</li>
-                <li>Mulesoft, SaaS, PaaS, API, JSON, SalesForce</li>
-                <li>MVC, SPA, Embedded, CMS, PWA, ORMs <br />( IT Architectures )</li>
-                <li>LLMS, GenAI, Predictions, Cognitive Services ( AI )</li>
-                <li>Business Systems Analysis</li>
-                <li>CMS Support <br />( WordPress, Google Pages, Css)</li>
-                <li>Full Packages Management <br />( npm, pip, nuget, composer, chocolate, yarn )</li>
-                <li>Data mining, Big Data & ETL <br />( Talend, informatica, SNFK)</li>
+                {/* Development Stacks */}
+                <li><strong>Development Stacks:</strong></li>
+                <li>Full JavaScript Stack (MEVN, MERN, MEAN)</li>
+                <li>Full PHP Stack (Laravel, Symfony, CodeIgniter)</li>
+                <li>Full .NET Stack (SharePoint, C#, Blazor, Fluent, ASP, CORE)</li>
+                <li>Full Python Stack (Django, Flask & Pandas)</li>
+                <li>Mobile Development (Kotlin, DART, MAUI, Swift)</li>
+                <br />
+
+                {/* Tech Tools by Area */}
+                <li><strong>Tech Tools by Area:</strong></li>
+                <li>Cloud (Azure, AWS, Google Cloud)</li>
+                <li>UX & UI (Figma)</li>
+                <li>BI (Tableau, PowerBI)</li>
+                <li>RPA (Power Automate, Selenium, Katalon, Postman)</li>
+                <li>DBA (MariaDB, Oracle DB, PostgreSQL, SQL Server, Mongo)</li>
+                <li>INFRA (Windows Server, Apache, NGINX, Heroku)</li>
+                <li>SEC (CheckMarx, DependBot, DRP, API Mgmnt - Mulesoft)</li>
+                <li>Data Engineering (Talend, Informatica, SNF, ETL)</li>
+                <br />
+
+                {/* Methodologies and Practices knowledge */}
+                <li><strong>Methodologies and Practices knowledge:</strong></li>
+                <li>Development Methodologies (DevOps, CI/CD, Monitoring)</li>
+                <li>Agile Methodologies (Scrum, Kanban, LEAN, Kaizen)</li>
+                <li>IT Support Methodologies (Citrix, Team Viewer, SLA, Hotfix)</li>
+                <li>CMS Support (WordPress, Google Pages, SAP, Salesforce)</li>
+                <br />
+
+                {/* Software Documentation and Planning */}
+                <li><strong>Software Documentation and Planning:</strong></li>
+                <li>Documentation under IT frameworks</li>
+                <li>Diagram development for projects (Bizagi, Draw.io)</li>
+                <li>Planning and deliverables to IT production projects</li>
+                <li>Business analysis oriented to IT requirements</li>
+                <br />
+
+                {/* Business Analysis and New Skills */}
+                <li><strong>Business Analysis and New Skills:</strong></li>
+                <li>B.S.A, COBIT19, ITIL, PMP, KYC & KYB</li>
+                <li>E.S.A (MVC, SPA, Embedded, CRM, PWA, ERP, APIs)</li>
+                <li>AI (LLMS, GenAI, Predictions, Cognitive Services)</li>
               </ul>
             </div>
+
           </div>
         </div>
       </div>
