@@ -1,193 +1,339 @@
-import React from 'react';
-import 'bootstrap';
-import Call from './ButtonCall';
+import React, { useEffect, useState } from 'react';
+import styles from './about.module.css';
+
+const contactLinks = [
+  { label: 'Phone', value: '+52 333 009 9430', href: 'https://wa.me/523330099430' },
+  { label: 'Email', value: 'ealuna1998@gmail.com', href: 'mailto:ealuna1998@gmail.com' },
+  { label: 'Location', value: 'Zapopan, Jalisco', href: 'https://www.google.com/maps/place/Zapopan,+Jalisco' },
+  { label: 'LinkedIn', value: '/edgarluna8', href: 'https://www.linkedin.com/in/edgarluna8/' },
+  { label: 'GitHub', value: 'github.com/edgarluna8', href: 'https://github.com/edgarluna8' },
+];
+
+const highlights = [
+  'Data & Tech Lead',
+  'IT Engineer',
+  'Analytic Engineer',
+  'Full Stack Developer',
+  'Business Systems Analyst',
+];
+
+const jobs = [
+  {
+    company: 'PiSA',
+    role: 'Data Expert',
+    period: 'May 2025 - Now',
+    bullets: [
+      'BI & analytics initiatives',
+      'Cloud data platforms with BigQuery',
+      'Data science and advanced analytics',
+      'AI solutions for NLP and process automation',
+      'Data modeling and quality assurance',
+    ],
+  },
+  {
+    company: 'Toka',
+    role: 'Software Engineer',
+    period: 'Apr 2024 - Apr 2025',
+    bullets: [
+      'TOGAF-based enterprise architecture analysis',
+      'Business and technology alignment in finance',
+      'Design and development of financial systems',
+    ],
+  },
+  {
+    company: 'Flex',
+    role: 'Full Stack Developer',
+    period: 'Jan 2021 - Dec 2023',
+    bullets: [
+      'Web, desktop and mobile development',
+      'IT workflow design and optimization',
+      'SharePoint, bots and analytics solutions',
+      'Cloud infrastructure and deployment',
+    ],
+  },
+  {
+    company: 'Inprodi Web Studio',
+    role: 'Web Developer',
+    period: 'May 2020 - Jan 2021',
+    bullets: [
+      'Frontend architecture and UX/UI',
+      'CRM/ERP, SPAs and microservices development',
+      'Product ownership and testing strategy',
+      'Agile planning with sprints and user stories',
+      'Full stack Laravel and MERN delivery',
+    ],
+  },
+];
+
+const education = [
+  {
+    school: 'Technology Institute of Jalisco (ITJ)',
+    program: 'Software Engineer',
+    period: 'August 2017 - December 2022',
+    bullets: ['Prom 88', 'Teacher, E-Commerce Course', 'Member, Football Team Club', 'Member, Fair Projects TECMM 2018, 2019'],
+  },
+  {
+    school: 'Tecmilenio University',
+    program: 'High school',
+    period: 'August 2014 - July 2017',
+    bullets: ['Prom 89', 'Member, Halley Society', 'Member, Fair Project Tecmilenio', 'Member, Football Team'],
+  },
+];
+
+const skillGroups = [
+  {
+    title: 'Software Development Stacks',
+    items: [
+      ['Full-Stack', 'JavaScript, PHP, Python and .NET, Git, Jira'],
+      ['Libraries', 'pip, npm, nuget, composer, Claude and Codex'],
+      ['Documentation', 'Confluence, Notion, Azure DevOps'],
+    ],
+  },
+  {
+    title: 'Technologies & Tools',
+    items: [
+      ['Cloud', 'Azure, AWS, GCP, Heroku, Hostinger'],
+      ['Data/BI', 'Power BI, Tableau, BigQuery'],
+      ['Architecture', 'Microservices, MVC, SPA, Docker, YAML'],
+      ['Automation', 'Power Automate, Selenium, Postman'],
+      ['Databases', 'PostgreSQL, Oracle, SQL Server, MySQL, MongoDB, MariaDB, SQLite'],
+      ['Flows & UX/UI', 'Mermaid, UML, User Cases, Figma, Draw.io'],
+    ],
+  },
+  {
+    title: 'Infrastructure, Security & Data AI',
+    items: [
+      ['Env', 'Linux, Windows Server, Nginx, Apache, SSH'],
+      ['Sec', 'OWASP, OAuth2, SSO, OpenAPI, JWT'],
+      ['Data', 'BI, ETL, Medallion Architecture'],
+      ['AI', 'ML, LLMs, Prompt Engineering, GenAI, NLP, Cognitive Services'],
+    ],
+  },
+  {
+    title: 'Business & Delivery Knowledge',
+    items: [
+      ['Features', 'DevOps, CI/CD, SOLID, SDLC, Scrum'],
+      ['Frameworks', 'ITIL, COBIT, PMP, DAMA-DMBOK, TOGAF'],
+      ['Business', 'Stock, working capital, functional and matrix structure'],
+      ['IT', 'User stories, GAP analysis, Gantts, MVPs, pay methods, CRM/ERP, SaaS/IaaS, MLOps, scraping'],
+      ['Industries', 'Real estate, manufacturing, finance and pharma'],
+    ],
+  },
+];
+
+const traits = ['Proactive', 'Versatile', 'Geek', 'VISA', 'Passport', 'Single'];
+
+const summary =
+  'IT Engineer, Tech Lead and Analytic Engineer with 5+ years of experience designing scalable, secure and efficient technology systems. Experienced in data platforms, business systems, software architecture, automation, AI solutions, full stack development and business-technology alignment.';
 
 const About = () => {
+  const [printMode, setPrintMode] = useState('visual');
+
+  useEffect(() => {
+    const resetPrintMode = () => setPrintMode('visual');
+    window.addEventListener('afterprint', resetPrintMode);
+
+    return () => {
+      window.removeEventListener('afterprint', resetPrintMode);
+    };
+  }, []);
+
+  const handlePrint = (mode) => {
+    setPrintMode(mode);
+    window.setTimeout(() => window.print(), 80);
+  };
+
   return (
-    <div className="container d-flex justify-content-center mt-4 mb-4">
-      <div className="card shadow p-3 mb-5 bg-body rounded">
-        <img className="rounded-circle mx-auto d-block mt-1" src="tft.png" alt="" height="150px" />
-        
-        <div className="row">
-          <div className="col-md-12 text-center">
-            <h1>Edgar Adrian Luna Lopez</h1>
-            <h2 className="h5">| Software Engineer | Business Systems Analyst | Full Stack Developer |</h2>
-            
-            <div className="row mt-4">
-              <div className="col-md-6 mb-4">
-                <h3>About me</h3>
-                <p className="text-center">
-                  Hi there! I'm a 26-year-old software developer, business systems analyst and data engineer with 5 years of experience in the tech industry.
-                  <br />
-                  I thrive on taking up new challenges and constantly learning.
-                  <br />
-                  I have a passion for coding and enjoy exploring new technologies, traveling to new places, and staying up to date with the latest tech trends.
-                </p>
-              </div>
-              
-              <div className="col-md-6 mb-4">
-                <h3>Contact me!</h3>
-                <div className="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                  <Call link="mailto:ealuna1998@gmail.com" title="Email" />
-                  <Call link="https://wa.me/523330099430" title="WhatsApp" />
-                  <Call link="https://www.linkedin.com/in/edgarluna8/" title="LinkedIn" />
-                  <Call link="https://drive.google.com/file/d/1AYzTQP3-K55DjvefHLrLXbjxJtKyA7n9/view?usp=sharing" title="CV" />
-                  <Call link="https://github.com/edgarluna8" title="Github" />
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="row g-3">
-            <div className="col-lg-4 col-md-6">
-              <div className="p-3">
-                <h3 className="text-center">Academic History</h3>
-                <ul className="list-unstyled">
-                  <li className="mb-3">
-                    <b>Technology Institute of Jalisco</b>
-                    <p className="mb-1">Software Engineer | August 2017 - December 2022</p>
-                    <ul>
-                      <li>Prom 88</li>
-                      <li>Teacher, E-Commerce Course.</li>
-                      <li>Member, Football Team Club.</li>
-                      <li>Member, Fair Projects TECMM 2018, 2019...</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b>Tecmilenio</b>
-                    <p className="mb-1">High School | August 2014 - July 2017</p>
-                    <ul>
-                      <li>Prom 88</li>
-                      <li>Member, Halley Society.</li>
-                      <li>Member, Fair Project Tecmilenio Member.</li>
-                      <li>Football Team</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="col-lg-4 col-md-6">
-              <div className="p-3">
-                <h3 className="text-center">Career History</h3>
-                <ul className="list-unstyled">
-                  <li className="mb-3">
-                    <b>Toka Internacional</b>
-                    <p className="mb-1">Software Engineer | April 2024 - now</p>
-                    <ul>
-                      <li>Enterprise Architecture of Applications</li>
-                      <li>Business and Technology Documentations</li>
-                      <li>Software Design and Architecture</li>
-                      <li>TOGAF 10 & COBIT 19 Frameworks</li>
-                    </ul>
-                  </li>
-                  <li className="mb-3">
-                    <b>Flextronics</b>
-                    <p className="mb-1">Full Stack Dev | October 2021 - December 2023</p>
-                    <ul>
-                      <li>Full stack software development</li>
-                      <li>Flow design and implementations</li>
-                      <li>Design UX | UI</li>
-                      <li>SharePoint, Bots and Analytics</li>
-                      <li>Azure Architecture, AWS and Open AI</li>
-                    </ul>
-                    <p className="mb-1">Data Analytics Intern | January 2021 - October 2021</p>
-                    <ul>
-                      <li>Power BI & Tableau Dashboards</li>
-                      <li>Procedures, Jobs and Queries SQL</li>
-                      <li>RPA (Katalon and Power Automate)</li>
-                      <li>Software Developments in Manufacturing Areas</li>
-                    </ul>
-                  </li>
-                  <li className="mb-3">
-                    <b>Inprodi Web Studio</b>
-                    <p className="mb-1">Web Developer | May 2020 - January 2021</p>
-                    <ul>
-                      <li>Layout Interfaces-Product</li>
-                      <li>CRM - ERP Development, Websites, etc.</li>
-                      <li>Testing and planning as product owner.</li>
-                      <li>Planning Agile Methods (Sprints and Blocks).</li>
-                      <li>Laravel and MERN Full stack</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b>Desarrollos Inmobiliarios de Occidente</b>
-                    <p className="mb-1">IT Support & Tester Jr | March 2019 - June 2020</p>
-                    <ul>
-                      <li>BD Administrator of CRM-ERP.</li>
-                      <li>IT Support, Testing & Helpdesk.</li>
-                      <li>Web development.</li>
-                      <li>SQL Reports</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="col-lg-4">
-              <div className="p-3">
-                <h3>Software Skills</h3>
-                <ul className="list-unstyled">
-                  <li className="mb-2">
-                    <strong>Development Stacks:</strong>
-                    <ul>
-                      <li>Full JavaScript Stack (MEVN, MERN, MEAN)</li>
-                      <li>Full PHP Stack (Laravel, Symfony, CodeIgniter)</li>
-                      <li>Full .NET Stack (SharePoint, C#, Blazor, Fluent, ASP, CORE)</li>
-                      <li>Full Python Stack (Django, Flask & Pandas)</li>
-                      <li>Mobile Development (Kotlin, DART, MAUI, Swift)</li>
-                    </ul>
-                  </li>
-                  
-                  <li className="mb-2">
-                    <strong>Tech Tools by Area:</strong>
-                    <ul>
-                      <li>Cloud (Azure, AWS, Google Cloud)</li>
-                      <li>UX & UI (Figma)</li>
-                      <li>BI (Tableau, PowerBI)</li>
-                      <li>RPA (Power Automate, Selenium, Katalon, Postman)</li>
-                      <li>DBA (MariaDB, Oracle DB, PostgreSQL, SQL Server, Mongo)</li>
-                      <li>INFRA (Windows Server, Apache, NGINX, Heroku)</li>
-                      <li>SEC (CheckMarx, DependBot, DRP, API Management - Mulesoft)</li>
-                      <li>Data Engineering (Talend, Informatica, SNF, ETL)</li>
-                    </ul>
-                  </li>
-                  
-                  <li className="mb-2">
-                    <strong>Methodologies and Practices knowledge:</strong>
-                    <ul>
-                      <li>Development Methodologies (DevOps, CI/CD, Monitoring)</li>
-                      <li>Agile Methodologies (Scrum, Kanban, LEAN, Kaizen)</li>
-                      <li>IT Support Methodologies (Citrix, Team Viewer, SLA, Hotfix)</li>
-                      <li>CMS Support (WordPress, Google Pages, SAP, Salesforce)</li>
-                    </ul>
-                  </li>
-                  
-                  <li className="mb-2">
-                    <strong>Software Documentation and Planning:</strong>
-                    <ul>
-                      <li>Documentation under IT frameworks</li>
-                      <li>Diagram development for projects (Bizagi, Draw.io)</li>
-                      <li>Planning and deliverables to IT production projects</li>
-                      <li>Business analysis oriented to IT requirements</li>
-                    </ul>
-                  </li>
-                  
-                  <li>
-                    <strong>Business Analysis and New Skills:</strong>
-                    <ul>
-                      <li>B.S.A, COBIT19, ITIL, PMP, KYC & KYB</li>
-                      <li>E.S.A (MVC, SPA, Embedded, CRM, PWA, ERP, APIs)</li>
-                      <li>AI (LLMS, GenAI, Predictions, Cognitive Services)</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+    <main className={`${styles.page} ${printMode === 'ats' ? styles.printAts : styles.printVisual}`}>
+      <div className={styles.printToolbar} aria-label="Download options">
+        <button type="button" onClick={() => handlePrint('visual')}>
+          PDF
+        </button>
+        <button type="button" onClick={() => handlePrint('ats')}>
+          PDF ATS
+        </button>
+        <a href="mailto:ealuna1998@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/edgarluna8/">LinkedIn</a>
       </div>
-    </div>
+
+      <section className={styles.shell} aria-label="Edgar Luna curriculum">
+        <aside className={styles.sidebar}>
+          <div className={styles.photoWrap}>
+            <img className={styles.photo} src="tft.png" alt="Edgar Luna" />
+            <span className={styles.flag}>MX</span>
+          </div>
+
+          <div className={styles.identity}>
+            <p className={styles.kicker}>Curriculum Vitae</p>
+            <h1>Edgar Luna</h1>
+            <p>Data & Tech Lead</p>
+          </div>
+
+          <p className={styles.about}>
+            I am Edgar Luna, a passionate and innovative IT Engineer, Tech Lead and Analytic
+            Engineer with over 5 years of experience designing scalable, secure and efficient tech
+            systems while aligning IT strategies with business objectives.
+          </p>
+
+          <section className={styles.panel}>
+            <h2>Reach Me At</h2>
+            <div className={styles.contactList}>
+              {contactLinks.map((link) => (
+                <a key={link.label} href={link.href} className={styles.contactItem}>
+                  <span>{link.label}</span>
+                  <strong>{link.value}</strong>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.panel}>
+            <h2>Core Profile</h2>
+            <div className={styles.chips}>
+              {highlights.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </section>
+        </aside>
+
+        <div className={styles.content}>
+          <section className={styles.heroStrip}>
+            <div>
+              <p className={styles.kicker}>Data, AI, Architecture and Delivery</p>
+              <h2>Business-minded engineering for useful systems.</h2>
+            </div>
+            <div className={styles.metrics} aria-label="Quick profile metrics">
+              <span>5+ Years</span>
+              <span>Spanish 100%</span>
+              <span>English B2</span>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2>Career History</h2>
+            <div className={styles.timeline}>
+              {jobs.map((job) => (
+                <article className={styles.timelineItem} key={`${job.company}-${job.role}`}>
+                  <div>
+                    <h3>{job.company}</h3>
+                    <p>
+                      {job.role} <span>{job.period}</span>
+                    </p>
+                  </div>
+                  <ul>
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2>Academic History</h2>
+            <div className={styles.educationGrid}>
+              {education.map((item) => (
+                <article className={styles.educationCard} key={item.school}>
+                  <h3>{item.school}</h3>
+                  <p>
+                    {item.program} <span>{item.period}</span>
+                  </p>
+                  <ul>
+                    {item.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2>Skills & Stacks</h2>
+            <div className={styles.skillsGrid}>
+              {skillGroups.map((group) => (
+                <article className={styles.skillCard} key={group.title}>
+                  <h3>{group.title}</h3>
+                  <ul>
+                    {group.items.map(([label, value]) => (
+                      <li key={label}>
+                        <strong>{label}:</strong> {value}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={`${styles.section} ${styles.traitSection}`}>
+            <h2>Personal Signals</h2>
+            <div className={styles.traits}>
+              {traits.map((trait) => (
+                <span key={trait}>{trait}</span>
+              ))}
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section className={styles.atsResume} aria-label="ATS resume">
+        <header className={styles.atsHeader}>
+          <h1>Edgar Luna</h1>
+          <p>Data & Tech Lead | IT Engineer | Analytic Engineer | Full Stack Developer</p>
+          <address>
+            Zapopan, Jalisco, Mexico | Phone: +52 333 009 9430 | Email: ealuna1998@gmail.com |
+            LinkedIn: linkedin.com/in/edgarluna8 | GitHub: github.com/edgarluna8
+          </address>
+        </header>
+
+        <section className={styles.atsSection}>
+          <h2>Summary</h2>
+          <p>{summary}</p>
+        </section>
+
+        <section className={styles.atsSection}>
+          <h2>Experience</h2>
+          {jobs.map((job) => (
+            <article className={styles.atsItem} key={`ats-${job.company}-${job.role}`}>
+              <h3>{job.company}</h3>
+              <p>
+                <strong>{job.role}</strong> | {job.period.replace('Now', 'Present')}
+              </p>
+              <ul>
+                {job.bullets.map((bullet) => (
+                  <li key={`ats-${job.company}-${bullet}`}>{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </section>
+
+        <section className={styles.atsSection}>
+          <h2>Education</h2>
+          {education.map((item) => (
+            <article className={styles.atsItem} key={`ats-${item.school}`}>
+              <h3>{item.school}</h3>
+              <p>
+                <strong>{item.program}</strong> | {item.period}
+              </p>
+            </article>
+          ))}
+        </section>
+
+        <section className={styles.atsSection}>
+          <h2>Skills</h2>
+          {skillGroups.map((group) => (
+            <p key={`ats-${group.title}`}>
+              <strong>{group.title}:</strong>{' '}
+              {group.items.map(([label, value]) => `${label}: ${value}`).join('; ')}
+            </p>
+          ))}
+        </section>
+      </section>
+    </main>
   );
 };
 

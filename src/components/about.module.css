@@ -1,169 +1,814 @@
-@media print {
-  body {
-    margin: 0;
-    padding: 0;
-    height: auto;
-  }
-
-  .container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .card {
-    box-shadow: none;
-    margin: 0;
-    padding: 10px;
-  }
-
-  .row,
-  .col,
-  .col-md-6,
-  .col-md-12,
-  .col.m-1 {
-    page-break-inside: avoid;
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-  }
-
-  p {
-    margin: 0 0 5px;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
+:global(*) {
+  box-sizing: border-box;
 }
 
-
-
-body {
+:global(body) {
   margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-image: url('../../public/DALL·E\ 2024-08-03\ 19.36.45\ -\ A\ hyperrealistic\ background\ for\ a\ software\ engineer\'s\ CV\ webpage.\ The\ design\ integrates\ elements\ of\ modern\ technology\ with\ a\ professional\ aesthetic.\ T.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  color: #172033;
+  background:
+    linear-gradient(120deg, rgba(9, 91, 164, 0.12), rgba(29, 178, 145, 0.08)),
+    #eef3f7;
+  font-family: Inter, Montserrat, "Segoe UI", Arial, sans-serif;
 }
 
-.card {
-  width: 17em;
-  height: 22.5em;
-  background: #171717;
-  transition: 1s ease-in-out;
-  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 84px 32px 32px;
+}
+
+.printToolbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: min(680px, calc(100% - 24px));
+  padding: 8px;
+  border: 1px solid rgba(18, 106, 180, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 40px rgba(21, 42, 75, 0.14);
+  transform: translateX(-50%);
+}
+
+.printToolbar button,
+.printToolbar a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 13px;
+  border: 1px solid rgba(18, 106, 180, 0.18);
+  border-radius: 8px;
+  color: #0b477b;
+  background: #edf7ff;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.printToolbar button:first-child {
+  color: #ffffff;
+  background: #126ab4;
+}
+
+.printToolbar button:hover,
+.printToolbar a:hover {
+  background: #dff0ff;
+  transform: translateY(-1px);
+}
+
+.printToolbar button:first-child:hover {
+  background: #0e5b9a;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 320px) minmax(0, 1fr);
+  gap: 24px;
+  width: min(1260px, 100%);
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 24px 80px rgba(21, 42, 75, 0.18);
+}
+
+.sidebar,
+.content {
+  min-width: 0;
+}
+
+.sidebar {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 14px;
+  color: #f7fbff;
+  background:
+    linear-gradient(180deg, rgba(5, 83, 153, 0.96), rgba(10, 45, 84, 0.98)),
+    #0a4f90;
 }
 
-.card span {
-  font-weight: bold;
-  color: white;
-  text-align: center;
+.photoWrap {
+  position: relative;
+  align-self: center;
+}
+
+.photo {
   display: block;
-  font-size: 1em;
+  width: 168px;
+  height: 168px;
+  border: 4px solid rgba(255, 255, 255, 0.76);
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: 0 16px 40px rgba(3, 18, 35, 0.38);
 }
 
-.card .info {
-  font-weight: 400;
-  color: white;
-  display: block;
-  text-align: center;
-  font-size: 0.72em;
-  margin: 1em;
-}
-
-.card .img {
-  width: 4.8em;
-  height: 4.8em;
-  background: white;
-  border-radius: 15px;
-  margin: auto;
-}
-
-.card .share {
-  margin-top: 1em;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-
-.card a {
-  color: white;
-  transition: .4s ease-in-out;
-}
-
-.card a:hover {
-  color: red;
-}
-
-.card button {
-  padding: 0.8em 1.7em;
-  display: block;
-  margin: auto;
-  border-radius: 25px;
-  border: none;
-  font-weight: bold;
+.flag {
+  position: absolute;
+  right: 4px;
+  bottom: 12px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #0d4f35;
   background: #ffffff;
-  color: rgb(0, 0, 0);
-  transition: .4s ease-in-out;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
 }
 
-.card button:hover {
-  background: red;
-  color: white;
-  cursor: pointer;
+.identity {
+  text-align: center;
 }
 
-.btnDonate {
-  --clr-font-main: hsla(0 0% 20% / 100);
-  --btn-bg-1: hsla(194 100% 69% / 1);
-  --btn-bg-2: hsla(217 100% 56% / 1);
-  --btn-bg-color: hsla(360 100% 100% / 1);
-  --radii: 0.5em;
-  cursor: pointer;
+.kicker {
+  margin: 0 0 6px;
+  color: #1470bd;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sidebar .kicker {
+  color: #9ed1ff;
+}
+
+.identity h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2.65rem;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.identity p:last-child {
+  margin: 10px 0 0;
+  color: #e8f5ff;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about {
+  margin: 0;
+  color: #e6f2ff;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.panel {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.panel h2,
+.section h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  color: #126ab4;
+  font-size: 0.96rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.panel h2 {
+  color: #ffffff;
+}
+
+.panel h2::after,
+.section h2::after {
+  flex: 1;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  opacity: 0.2;
+}
+
+.contactList {
+  display: grid;
+  gap: 9px;
+}
+
+.contactItem {
+  display: grid;
+  gap: 2px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
   text-decoration: none;
-  padding: 0.9em 1.4em;
-  min-width: 120px;
-  margin: 4px;
-  min-height: 44px;
-  font-size: var(--size, 1rem);
-  font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 500;
-  transition: 0.8s;
-  background-size: 280% auto;
-  background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
-  border: none;
-  border-radius: var(--radii);
-  color: var(--btn-bg-color);
-  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+  transition: background-color 140ms ease, border-color 140ms ease;
 }
 
-.btnDonate:hover {
-  background-position: right top;
+.contactItem:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
-.btnDonate:is(:focus, :focus-visible, :active) {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+.contactItem span {
+  color: #a9d9ff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contactItem strong {
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.chips,
+.traits,
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips span,
+.traits span,
+.metrics span {
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.chips span {
+  padding: 7px 10px;
+  color: #083966;
+  background: #ffffff;
+  font-size: 0.78rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 6px 8px 6px 0;
+}
+
+.heroStrip {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(18, 106, 180, 0.98), rgba(8, 49, 91, 0.98)),
+    #0d5d9d;
+}
+
+.heroStrip h2 {
+  max-width: 650px;
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.heroStrip .kicker {
+  color: #d7ecff;
+}
+
+.metrics {
+  justify-content: flex-end;
+}
+
+.metrics span {
+  padding: 8px 10px;
+  color: #083966;
+  background: #ffffff;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.section {
+  padding: 18px;
+  border: 1px solid rgba(18, 106, 180, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
+  gap: 16px;
+  padding-left: 16px;
+  border-left: 3px solid #1470bd;
+}
+
+.timelineItem h3,
+.educationCard h3,
+.skillCard h3 {
+  margin: 0;
+  color: #121a29;
+  font-size: 1.02rem;
+  font-weight: 900;
+}
+
+.timelineItem p,
+.educationCard p {
+  margin: 5px 0 0;
+  color: #4c5666;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.timelineItem p span,
+.educationCard p span {
+  display: block;
+  margin-top: 2px;
+  color: #126ab4;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.timelineItem ul,
+.educationCard ul,
+.skillCard ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.timelineItem li,
+.educationCard li,
+.skillCard li {
+  margin: 3px 0;
+  color: #3e4654;
+  line-height: 1.42;
+}
+
+.educationGrid,
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.educationCard,
+.skillCard {
+  min-width: 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f6f9fc;
+}
+
+.skillCard li {
+  overflow-wrap: anywhere;
+}
+
+.traits span {
+  padding: 10px 14px;
+  color: #0e4f85;
+  background: #e7f4ff;
+  font-size: 0.92rem;
+}
+
+.atsResume {
+  display: none;
+}
+
+.printVisual {
+  color: inherit;
+}
+
+@supports (animation-timeline: view()) {
+  .sidebar,
+  .heroStrip,
+  .section {
+    animation: sectionReveal both ease-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 24%;
+  }
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0.82;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btnDonate {
-    transition: linear;
+  .sidebar,
+  .heroStrip,
+  .section {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 84px 16px 16px;
+  }
+
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    align-items: stretch;
+  }
+
+  .heroStrip,
+  .timelineItem {
+    grid-template-columns: 1fr;
+  }
+
+  .heroStrip {
+    display: grid;
+    align-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 0 0 104px;
+  }
+
+  .printToolbar {
+    top: auto;
+    bottom: 10px;
+    width: calc(100% - 16px);
+    padding: 7px;
+    border-radius: 14px;
+    box-shadow: 0 12px 34px rgba(21, 42, 75, 0.22);
+  }
+
+  .printToolbar button,
+  .printToolbar a {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 0.78rem;
+  }
+
+  .shell {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .sidebar,
+  .section,
+  .heroStrip {
+    border-radius: 0;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .educationGrid,
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .identity h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.22in;
+  }
+
+  :global(html),
+  :global(body) {
+    width: 100%;
+    min-height: 0;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .printToolbar {
+    display: none !important;
+  }
+
+  .page {
+    min-height: 0;
+    overflow: visible;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .atsResume {
+    display: none;
+  }
+
+  .shell {
+    display: grid;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: 2.18in 1fr;
+    gap: 0.1in;
+    border: 0;
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: none;
+  }
+
+  .sidebar {
+    min-height: 10.55in;
+    gap: 0.075in;
+    padding: 0.14in;
+    border-radius: 0;
+    background: #126ab4 !important;
+  }
+
+  .photo {
+    width: 0.98in;
+    height: 0.98in;
+    border-width: 2px;
+  }
+
+  .flag {
+    right: -2px;
+    bottom: 2px;
+    padding: 2px 4px;
+    font-size: 6pt;
+  }
+
+  .identity h1 {
+    font-size: 19pt;
+    letter-spacing: 0.08em;
+  }
+
+  .identity p:last-child {
+    margin-top: 0.04in;
+    font-size: 7.8pt;
+    letter-spacing: 0.12em;
+  }
+
+  .kicker,
+  .panel h2,
+  .section h2 {
+    margin-bottom: 0.06in;
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+  }
+
+  .about {
+    font-size: 7.1pt;
+    line-height: 1.22;
+  }
+
+  .panel {
+    padding-top: 0.07in;
+  }
+
+  .contactList {
+    gap: 0.03in;
+  }
+
+  .contactItem {
+    padding: 0;
+    background: transparent !important;
+  }
+
+  .contactItem span {
+    font-size: 5.9pt;
+  }
+
+  .contactItem strong {
+    font-size: 6.8pt;
+    line-height: 1.18;
+  }
+
+  .chips {
+    gap: 0.035in;
+  }
+
+  .chips span {
+    padding: 0.022in 0.04in;
+    font-size: 6.1pt;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.055in;
+    padding: 0;
+  }
+
+  .heroStrip {
+    padding: 0.07in 0.08in;
+    border-radius: 0;
+  }
+
+  .heroStrip h2 {
+    font-size: 11.2pt;
+    line-height: 1.06;
+  }
+
+  .metrics span {
+    padding: 0.02in 0.04in;
+    font-size: 6.2pt;
+  }
+
+  .traitSection {
+    display: none !important;
+  }
+
+  .section {
+    padding: 0.045in 0.07in;
+    border: 0;
+    border-radius: 0;
+    background: #ffffff;
+  }
+
+  .timeline {
+    gap: 0.04in;
+  }
+
+  .timelineItem {
+    grid-template-columns: 1.18in 1fr;
+    gap: 0.06in;
+    padding-left: 0.06in;
+    border-left-width: 2px;
+    break-inside: avoid;
+  }
+
+  .timelineItem h3,
+  .educationCard h3,
+  .skillCard h3 {
+    font-size: 7.8pt;
+    line-height: 1.08;
+  }
+
+  .timelineItem p,
+  .educationCard p {
+    margin-top: 0.02in;
+    font-size: 6.9pt;
+    line-height: 1.15;
+  }
+
+  .timelineItem p span,
+  .educationCard p span {
+    margin-top: 0;
+    font-size: 6pt;
+  }
+
+  .timelineItem ul,
+  .educationCard ul,
+  .skillCard ul {
+    padding-left: 0.12in;
+  }
+
+  .timelineItem li,
+  .educationCard li,
+  .skillCard li {
+    margin: 0;
+    font-size: 6.55pt;
+    line-height: 1.14;
+  }
+
+  .educationGrid,
+  .skillsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.045in;
+  }
+
+  .educationCard,
+  .skillCard {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    break-inside: avoid;
+  }
+
+  .sidebar,
+  .heroStrip,
+  .section {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .printAts .shell {
+    display: none !important;
+  }
+
+  .printAts .atsResume {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #111111;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    line-height: 1.22;
+  }
+
+  .atsHeader {
+    margin-bottom: 0.12in;
+    text-align: center;
+  }
+
+  .atsHeader h1 {
+    margin: 0;
+    color: #000000;
+    font-size: 19pt;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .atsHeader p {
+    margin: 0.04in 0 0;
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+
+  .atsHeader address {
+    margin: 0.04in 0 0;
+    font-style: normal;
+    font-size: 8.2pt;
+  }
+
+  .atsSection {
+    margin-top: 0.095in;
+    break-inside: avoid;
+  }
+
+  .atsSection h2 {
+    margin: 0 0 0.035in;
+    padding-bottom: 0.02in;
+    border-bottom: 1px solid #000000;
+    color: #000000;
+    font-size: 10pt;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .atsItem {
+    margin-top: 0.055in;
+    break-inside: avoid;
+  }
+
+  .atsItem h3,
+  .atsItem p,
+  .atsSection p {
+    margin: 0;
+  }
+
+  .atsItem h3 {
+    font-size: 9.4pt;
+    font-weight: 800;
+  }
+
+  .atsItem p {
+    margin-top: 0.015in;
+  }
+
+  .atsResume ul {
+    margin: 0.025in 0 0;
+    padding-left: 0.18in;
+  }
+
+  .atsResume li {
+    margin: 0;
+    line-height: 1.18;
+  }
+
+  .atsSection p + p {
+    margin-top: 0.035in;
   }
 }
