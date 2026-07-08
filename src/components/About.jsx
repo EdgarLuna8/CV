@@ -45,13 +45,14 @@ const jobs = [
   },
   {
     company: 'Toka',
-    role: 'Software Engineer',
+    role: 'Software Engineer / Tech Lead',
     period: 'Apr 2024 - Apr 2025',
     bullets: [
       'Led technology projects and coordinated team members under my supervision',
       'TOGAF-based enterprise architecture analysis',
       'Business and technology alignment in finance',
       'Design and development of financial systems',
+      'Supported AI initiatives with MCP and modern AI services for automation and product workflows',
     ],
   },
   {
@@ -64,6 +65,7 @@ const jobs = [
       'IT workflow design and optimization',
       'SharePoint, bots and analytics solutions',
       'Cloud infrastructure and deployment',
+      'Contributed to AI-related capabilities using MCP concepts and current AI services',
     ],
   },
   {
@@ -93,6 +95,14 @@ const education = [
     period: 'August 2014 - July 2017',
     bullets: ['Average grade: 89/100', 'Halley Society Member', 'Tecmilenio Project Fair Participant', 'Football Team Member'],
   },
+];
+
+const certifications = [
+  ['Project Management Fundamentals', 'Google'],
+  ['Lifelong Learning 2026', 'CertiProf'],
+  ['Scrum Foundation Professional Certificate (SFPC)', 'CertiProf'],
+  ['Networking Academy Learn-A-Thon 2020', 'Cisco'],
+  ['SQL Fundamentals', 'Sololearn'],
 ];
 
 const skillGroups = [
@@ -228,13 +238,25 @@ const About = () => {
               ))}
             </div>
           </section>
+
+          <section className={`${styles.panel} ${styles.certificationPanel}`}>
+            <h2>Certifications</h2>
+            <div className={styles.certificationList}>
+              {certifications.map(([name, issuer]) => (
+                <div key={`${name}-${issuer}`}>
+                  <strong>{name}</strong>
+                  <span>{issuer}</span>
+                </div>
+              ))}
+            </div>
+          </section>
         </aside>
 
         <div className={styles.content}>
           <section className={styles.heroStrip}>
             <div>
               <p className={styles.kicker}>Data, AI, Architecture and Delivery</p>
-              <h2>Business-minded engineering for useful systems.</h2>
+              <h2>Engineering intelligent systems that connect data, AI and business value.</h2>
             </div>
             <div className={styles.metrics} aria-label="Quick profile metrics">
               <span>5+ Years</span>
@@ -355,6 +377,17 @@ const About = () => {
               </p>
             </article>
           ))}
+        </section>
+
+        <section className={styles.atsSection}>
+          <h2>Certifications</h2>
+          <ul>
+            {certifications.map(([name, issuer]) => (
+              <li key={`ats-${name}-${issuer}`}>
+                {name} - {issuer}
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className={styles.atsSection}>

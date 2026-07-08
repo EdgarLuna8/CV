@@ -262,12 +262,26 @@
   gap: 7px;
 }
 
+.certificationList {
+  display: grid;
+  gap: 8px;
+}
+
 .leadershipList div {
   display: grid;
   grid-template-columns: 76px 1fr;
   gap: 8px;
   align-items: start;
   padding: 8px 10px;
+  border-left: 2px solid #8fdcc9;
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.certificationList div {
+  display: grid;
+  gap: 3px;
+  padding: 9px 10px;
   border-left: 2px solid #8fdcc9;
   border-radius: 0 8px 8px 0;
   background: rgba(255, 255, 255, 0.08);
@@ -280,11 +294,25 @@
   text-transform: uppercase;
 }
 
+.certificationList strong {
+  color: #ffffff;
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
 .leadershipList span {
   color: #ffffff;
   font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.3;
+}
+
+.certificationList span {
+  color: #9ed1ff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .content {
@@ -691,19 +719,39 @@
     gap: 0.025in;
   }
 
+  .certificationList {
+    gap: 0.025in;
+  }
+
   .leadershipList div {
     grid-template-columns: 0.5in 1fr;
     gap: 0.025in;
     padding: 0.025in 0.035in;
   }
 
+  .certificationList div {
+    gap: 0.01in;
+    padding: 0.025in 0.035in;
+    break-inside: avoid;
+  }
+
   .leadershipList strong {
     font-size: 5.6pt;
+  }
+
+  .certificationList strong {
+    font-size: 5.8pt;
+    line-height: 1.08;
   }
 
   .leadershipList span {
     font-size: 5.9pt;
     line-height: 1.1;
+  }
+
+  .certificationList span {
+    font-size: 5.4pt;
+    line-height: 1.05;
   }
 
   .content {
