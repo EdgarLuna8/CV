@@ -11,17 +11,30 @@ const contactLinks = [
 
 const highlights = [
   'Data & Tech Lead',
+  'AI Architect',
+  'AI Evangelist',
   'IT Engineer',
-  'Analytic Engineer',
-  'Full Stack Developer',
+  'Analytics Engineer',
+  'Full-Stack Developer',
+  'Enterprise Architecture',
+  'Technical Project Lead',
+  'Data & BI Strategy',
+  'Cloud & Automation',
   'Business Systems Analyst',
+];
+
+const leadershipFocus = [
+  ['Direction', 'Technology roadmaps and architecture'],
+  ['People', 'Team coordination and technical guidance'],
+  ['Innovation', 'AI adoption and process automation'],
+  ['Business', 'Stakeholder and IT alignment'],
 ];
 
 const jobs = [
   {
     company: 'PiSA',
     role: 'Data Expert',
-    period: 'May 2025 - Now',
+    period: 'May 2025 - Present',
     bullets: [
       'BI & analytics initiatives',
       'Cloud data platforms with BigQuery',
@@ -35,6 +48,7 @@ const jobs = [
     role: 'Software Engineer',
     period: 'Apr 2024 - Apr 2025',
     bullets: [
+      'Led technology projects and coordinated team members under my supervision',
       'TOGAF-based enterprise architecture analysis',
       'Business and technology alignment in finance',
       'Design and development of financial systems',
@@ -42,9 +56,10 @@ const jobs = [
   },
   {
     company: 'Flex',
-    role: 'Full Stack Developer',
+    role: 'Full-Stack Developer',
     period: 'Jan 2021 - Dec 2023',
     bullets: [
+      'Provided technical leadership across initiatives, guiding delivery and team collaboration',
       'Web, desktop and mobile development',
       'IT workflow design and optimization',
       'SharePoint, bots and analytics solutions',
@@ -70,53 +85,59 @@ const education = [
     school: 'Technology Institute of Jalisco (ITJ)',
     program: 'Software Engineer',
     period: 'August 2017 - December 2022',
-    bullets: ['Prom 88', 'Teacher, E-Commerce Course', 'Member, Football Team Club', 'Member, Fair Projects TECMM 2018, 2019'],
+    bullets: ['Average grade: 88/100', 'Instructor, E-commerce Course', 'Football Club Member', 'Project Fair Participant, TECMM (2018 and 2019)'],
   },
   {
     school: 'Tecmilenio University',
     program: 'High school',
     period: 'August 2014 - July 2017',
-    bullets: ['Prom 89', 'Member, Halley Society', 'Member, Fair Project Tecmilenio', 'Member, Football Team'],
+    bullets: ['Average grade: 89/100', 'Halley Society Member', 'Tecmilenio Project Fair Participant', 'Football Team Member'],
   },
 ];
 
 const skillGroups = [
   {
-    title: 'Software Development Stacks',
+    title: 'Technology Leadership & Governance',
+    focus: 'Connecting technical direction, delivery and business priorities.',
     items: [
-      ['Full-Stack', 'JavaScript, PHP, Python and .NET, Git, Jira'],
-      ['Libraries', 'pip, npm, nuget, composer, Claude and Codex'],
-      ['Documentation', 'Confluence, Notion, Azure DevOps'],
+      ['Leadership', 'Technical direction, project leadership and cross-functional collaboration'],
+      ['Governance', 'ITIL, COBIT, PMP, DAMA-DMBOK and TOGAF'],
+      ['Planning', 'GAP analysis, Gantt planning, MVPs, user stories and Scrum'],
+      ['Business', 'Working capital, inventory, payment methods and functional/matrix structures'],
+      ['Industries', 'Pharma, finance, manufacturing and real estate'],
     ],
   },
   {
-    title: 'Technologies & Tools',
+    title: 'Architecture, Cloud & Security',
+    focus: 'Designing scalable, secure and operationally sound technology ecosystems.',
     items: [
-      ['Cloud', 'Azure, AWS, GCP, Heroku, Hostinger'],
-      ['Data/BI', 'Power BI, Tableau, BigQuery'],
-      ['Architecture', 'Microservices, MVC, SPA, Docker, YAML'],
-      ['Automation', 'Power Automate, Selenium, Postman'],
-      ['Databases', 'PostgreSQL, Oracle, SQL Server, MySQL, MongoDB, MariaDB, SQLite'],
-      ['Flows & UX/UI', 'Mermaid, UML, User Cases, Figma, Draw.io'],
+      ['Architecture', 'Enterprise architecture, microservices, MVC, SPA, SaaS and IaaS'],
+      ['Cloud & Platforms', 'Azure, AWS, GCP, Heroku and Hostinger'],
+      ['Infrastructure', 'Linux, Windows Server, Nginx, Apache, Docker, YAML and SSH'],
+      ['Security', 'OWASP, OAuth2, SSO, OpenAPI and JWT'],
+      ['Databases', 'PostgreSQL, Oracle, SQL Server, MySQL, MongoDB, MariaDB and SQLite'],
     ],
   },
   {
-    title: 'Infrastructure, Security & Data AI',
+    title: 'Data, Analytics & AI',
+    focus: 'Turning governed data and intelligent automation into business value.',
     items: [
-      ['Env', 'Linux, Windows Server, Nginx, Apache, SSH'],
-      ['Sec', 'OWASP, OAuth2, SSO, OpenAPI, JWT'],
-      ['Data', 'BI, ETL, Medallion Architecture'],
-      ['AI', 'ML, LLMs, Prompt Engineering, GenAI, NLP, Cognitive Services'],
+      ['Data Strategy', 'BI, ETL, data quality, Medallion Architecture and DAMA-DMBOK'],
+      ['Analytics', 'Power BI, Tableau and BigQuery'],
+      ['AI & ML', 'Machine learning, LLMs, GenAI, NLP and Cognitive Services'],
+      ['AI Enablement', 'Prompt engineering, Claude and Codex'],
+      ['Automation', 'Power Automate, Selenium, scraping and MLOps'],
     ],
   },
   {
-    title: 'Business & Delivery Knowledge',
+    title: 'Engineering & Product Delivery',
+    focus: 'Leading reliable software delivery from discovery through operation.',
     items: [
-      ['Features', 'DevOps, CI/CD, SOLID, SDLC, Scrum'],
-      ['Frameworks', 'ITIL, COBIT, PMP, DAMA-DMBOK, TOGAF'],
-      ['Business', 'Stock, working capital, functional and matrix structure'],
-      ['IT', 'User stories, GAP analysis, Gantts, MVPs, pay methods, CRM/ERP, SaaS/IaaS, MLOps, scraping'],
-      ['Industries', 'Real estate, manufacturing, finance and pharma'],
+      ['Full-Stack', 'JavaScript, PHP, Python and .NET'],
+      ['Delivery', 'DevOps, CI/CD, SDLC, SOLID, Git, Jira and Azure DevOps'],
+      ['Products', 'Web, desktop and mobile solutions, CRM/ERP and business systems'],
+      ['Tooling', 'pip, npm, NuGet, Composer and Postman'],
+      ['Design & Documentation', 'UML, use cases, Mermaid, Figma, Draw.io, Confluence and Notion'],
     ],
   },
 ];
@@ -124,7 +145,7 @@ const skillGroups = [
 const traits = ['Proactive', 'Versatile', 'Geek', 'VISA', 'Passport', 'Single'];
 
 const summary =
-  'IT Engineer, Tech Lead and Analytic Engineer with 5+ years of experience designing scalable, secure and efficient technology systems. Experienced in data platforms, business systems, software architecture, automation, AI solutions, full stack development and business-technology alignment.';
+  'IT Engineer, Tech Lead and Analytics Engineer with 5+ years of experience designing scalable, secure and efficient technology systems. Experienced in AI architecture and adoption, data platforms, business systems, software architecture, automation, full-stack development, technical leadership and business-technology alignment.';
 
 const About = () => {
   const [printMode, setPrintMode] = useState('visual');
@@ -170,9 +191,9 @@ const About = () => {
           </div>
 
           <p className={styles.about}>
-            I am Edgar Luna, a passionate and innovative IT Engineer, Tech Lead and Analytic
-            Engineer with over 5 years of experience designing scalable, secure and efficient tech
-            systems while aligning IT strategies with business objectives.
+            I am Edgar Luna, an innovative IT Engineer, Tech Lead and Analytics Engineer with over
+            5 years of experience designing scalable, secure and efficient technology systems while
+            aligning IT strategy with business objectives.
           </p>
 
           <section className={styles.panel}>
@@ -192,6 +213,18 @@ const About = () => {
             <div className={styles.chips}>
               {highlights.map((item) => (
                 <span key={item}>{item}</span>
+              ))}
+            </div>
+          </section>
+
+          <section className={`${styles.panel} ${styles.leadershipPanel}`}>
+            <h2>Leadership Focus</h2>
+            <div className={styles.leadershipList}>
+              {leadershipFocus.map(([label, value]) => (
+                <div key={label}>
+                  <strong>{label}</strong>
+                  <span>{value}</span>
+                </div>
               ))}
             </div>
           </section>
@@ -251,11 +284,12 @@ const About = () => {
           </section>
 
           <section className={styles.section}>
-            <h2>Skills & Stacks</h2>
+            <h2>Leadership & Technical Capabilities</h2>
             <div className={styles.skillsGrid}>
               {skillGroups.map((group) => (
                 <article className={styles.skillCard} key={group.title}>
                   <h3>{group.title}</h3>
+                  <p className={styles.skillFocus}>{group.focus}</p>
                   <ul>
                     {group.items.map(([label, value]) => (
                       <li key={label}>
@@ -282,7 +316,7 @@ const About = () => {
       <section className={styles.atsResume} aria-label="ATS resume">
         <header className={styles.atsHeader}>
           <h1>Edgar Luna</h1>
-          <p>Data & Tech Lead | IT Engineer | Analytic Engineer | Full Stack Developer</p>
+          <p>Data & Tech Lead | AI Architect | IT Engineer | Analytics Engineer | Full-Stack Developer</p>
           <address>
             Zapopan, Jalisco, Mexico | Phone: +52 333 009 9430 | Email: ealuna1998@gmail.com |
             LinkedIn: linkedin.com/in/edgarluna8 | GitHub: github.com/edgarluna8
@@ -300,7 +334,7 @@ const About = () => {
             <article className={styles.atsItem} key={`ats-${job.company}-${job.role}`}>
               <h3>{job.company}</h3>
               <p>
-                <strong>{job.role}</strong> | {job.period.replace('Now', 'Present')}
+                <strong>{job.role}</strong> | {job.period}
               </p>
               <ul>
                 {job.bullets.map((bullet) => (
@@ -327,7 +361,7 @@ const About = () => {
           <h2>Skills</h2>
           {skillGroups.map((group) => (
             <p key={`ats-${group.title}`}>
-              <strong>{group.title}:</strong>{' '}
+              <strong>{group.title}:</strong> {group.focus}{' '}
               {group.items.map(([label, value]) => `${label}: ${value}`).join('; ')}
             </p>
           ))}
